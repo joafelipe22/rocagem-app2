@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Pedidos</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:#fff;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+}
+
+.card{
+background:#111827;
+padding:15px;
+margin:10px 0;
+border-radius:12px;
+}
+
+.valor{
+color:#22c55e;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📊 Painel de Pedidos</h1>
+
+<div id="lista"></div>
+
+<script>
+function carregarPedidos(){
+let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+let html = "";
+
+pedidos.reverse().forEach(p => {
+html += `
+<div class="card">
+<p><b>Nome:</b> ${p.nome}</p>
+<p><b>Telefone:</b> ${p.telefone}</p>
+<p><b>Endereço:</b> ${p.endereco}</p>
+<p><b>Serviço:</b> ${p.descricao}</p>
+<p class="valor">R$ ${p.valor}</p>
+<p><small>${p.data}</small></p>
+</div>
+`;
+});
+
+document.getElementById("lista").innerHTML = html;
+}
+
+carregarPedidos();
+</script>
+
+</body>
+</html>
