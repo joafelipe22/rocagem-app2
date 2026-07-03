@@ -9,23 +9,33 @@ function enviar() {
   const valor = calcularValor(tipo);
 
   const mensagem =
-`🚀 PEDIDO AUTOMÁTICO DE ORÇAMENTO
+`🚀 SOLICITAÇÃO DE ORÇAMENTO AUTOMÁTICO
 
-👤 Nome: ${nome}
-📞 Telefone: ${telefone}
+👤 Cliente: ${nome}
+📞 Contato: ${telefone}
 📍 Endereço: ${endereco}
 
 🛠 Serviço solicitado:
 ${descricao}
 
-📦 Tipo de serviço: ${tipo}
+📦 Plano escolhido: ${tipo}
 
 💰 Valor estimado: R$ ${valor}
 
 📍 Localização:
 https://www.google.com/maps?q=${latitude},${longitude}
 
-⚡ Responda rápido para confirmar o agendamento.`;
+━━━━━━━━━━━━━━
+⚡ PRÓXIMO PASSO:
+
+Responda com uma opção:
+
+1️⃣ Confirmar serviço
+2️⃣ Quero ajustar o valor
+3️⃣ Falar com atendente
+
+━━━━━━━━━━━━━━
+✔ Atendimento rápido e direto`;
 
   const numero = "5521991960469";
 
