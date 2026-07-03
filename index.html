@@ -7,28 +7,47 @@
 <title>Roçagem e Poda</title>
 
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
 <img src="logo.jpg" class="logo">
-<h1>Roçagem e Poda</h1>
-<p>Orçamento rápido pelo WhatsApp</p>
+<h2>Roçagem e Poda</h2>
+<p class="sub">Orçamento rápido e automático</p>
 </header>
 
-<main>
+<div class="card">
+
+<div class="title">Dados do cliente</div>
 
 <input id="nome" placeholder="Nome">
 <input id="telefone" placeholder="Telefone">
 <input id="endereco" placeholder="Endereço">
 
-<textarea id="descricao" placeholder="Descreva o serviço"></textarea>
+</div>
 
-<button onclick="enviar()">Solicitar orçamento</button>
+<div class="card">
 
-</main>
+<div class="title">Detalhes do serviço</div>
+
+<select id="tipo">
+<option value="1">Terreno leve</option>
+<option value="2">Médio</option>
+<option value="3">Pesado</option>
+</select>
+
+<textarea id="descricao" placeholder="Descreva o local"></textarea>
+
+<input type="file" id="foto" accept="image/*">
+
+</div>
+
+<button onclick="enviar()">Solicitar orçamento no WhatsApp</button>
+
+</div>
 
 <script src="script.js"></script>
 
