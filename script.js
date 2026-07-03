@@ -1,31 +1,31 @@
 function enviar() {
 
-  const nome = document.getElementById("nome").value;
-  const telefone = document.getElementById("telefone").value;
-  const endereco = document.getElementById("endereco").value;
-  const descricao = document.getElementById("descricao").value;
-  const tipo = document.getElementById("tipo").value;
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const endereco = document.getElementById("endereco").value;
+    const descricao = document.getElementById("descricao").value;
+    const tipo = document.getElementById("tipo").value;
 
-  const valor = calcularValor(tipo);
+    const valor = calcularValor(tipo);
 
-  const mensagem =
-`🚀 SOLICITAÇÃO DE ORÇAMENTO AUTOMÁTICO
+    // Substitua pelo seu número real (55 + DDD + Seu Número, sem espaços ou traços)
+    const meuNumero = "5521999999999"; 
+
+    // Texto da mensagem que você já tinha criado
+    const mensagem = `
+🚀 SOLICITAÇÃO DE ORÇAMENTO AUTOMÁTICO
 
 👤 Cliente: ${nome}
 📞 Contato: ${telefone}
 📍 Endereço: ${endereco}
 
-🛠 Serviço solicitado:
+🛠️ Serviço solicitado:
 ${descricao}
 
-📦 Plano escolhido: ${tipo}
+📂 Plano escolhido: ${tipo}
 
 💰 Valor estimado: R$ ${valor}
 
-📍 Localização:
-https://www.google.com/maps?q=${latitude},${longitude}
-
-━━━━━━━━━━━━━━
 ⚡ PRÓXIMO PASSO:
 
 Responda com uma opção:
@@ -34,16 +34,16 @@ Responda com uma opção:
 2️⃣ Quero ajustar o valor
 3️⃣ Falar com atendente
 
-━━━━━━━━━━━━━━
-✔ Atendimento rápido e direto`;
+✔️ Atendimento rápido e direto`;
 
-  const numero = "5521991960469";
+    // --- AS LINHAS QUE ESTAVAM FALTANDO COLOQUE AQUI: ---
+    
+    // 1. Transforma o texto para o formato que o link da internet aceita
+    const mensagemCodificada = encodeURIComponent(mensagem);
 
-  const url =
-    "https://wa.me/" +
-    numero +
-    "?text=" +
-    encodeURIComponent(mensagem);
+    // 2. Junta o seu número com a mensagem no link padrão do WhatsApp
+    const urlFinal = `https://wa.me/${meuNumero}?text=${mensagemCodificada}`;
 
-  window.open(url, "_blank");
+    // 3. Abre o WhatsApp com os dados preenchidos
+    window.open(urlFinal, '_blank');
 }
