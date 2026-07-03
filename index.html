@@ -1,66 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Roçagem e Poda</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roçagem e Poda</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <div class="header" style="background-color: #2ecc71; padding: 20px; text-align: center; border-radius: 10px; margin-bottom: 20px;">
+            <h2>Roçagem e Poda</h2>
+            <p>Orçamento rápido e automático</p>
+        </div>
 
-<header>
-<img src="logo.jpg" class="logo">
-<h2>Roçagem e Poda</h2>
-<p class="sub">Orçamento rápido e automático</p>
-</header>
+        <div class="card">
+            <div class="title">Dados do cliente</div>
+            <input type="text" id="nome" placeholder="Nome">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <input type="text" id="endereco" placeholder="Endereço">
+        </div>
 
-<div class="card">
+        <div class="card">
+            <div class="title">Detalhes do serviço</div>
+            <select id="tipo">
+                <option value="Terreno leve">Terreno leve</option>
+                <option value="Médio">Terreno médio</option>
+                <option value="Pesado">Terreno pesado</option>
+            </select>
 
-<div class="title">Dados do cliente</div>
+            <textarea id="descricao" placeholder="Descreva o local"></textarea>
+            <input type="type" id="foto" accept="image/*" style="display:none;"> 
+        </div>
 
-<input id="nome" placeholder="Nome">
-<input id="telefone" placeholder="Telefone">
-<input id="endereco" placeholder="Endereço">
+        <div class="card">
+            <div class="title">Resumo do orçamento</div>
+            <p id="valorPreview">Valor: R$ 0</p>
+        </div>
 
-</div>
+        <button class="btn-pulsando" onclick="enviar()">🚀 QUERO ORÇAMENTO AGORA</button>
+        <button onclick="enviar()">Solicitar orçamento no WhatsApp</button>
 
-<div class="card">
+    </div>
 
-<div class="title">Detalhes do serviço</div>
-
-<select id="tipo">
-<option value="1">Terreno leve</option>
-<option value="2">Médio</option>
-<option value="3">Pesado</option>
-</select>
-
-<textarea id="descricao" placeholder="Descreva o local"></textarea>
-
-<input type="file" id="foto" accept="image/*">
-
-<div class="card">
-  <div class="title">Resumo do orçamento</div>
-  <p id="valorPreview">Valor: R$ 0</p>
-</div>
-
-<button class="btn-pulsando" onclick="enviar()">🚀 QUERO ORÇAMENTO AGORA</button>
-
-<button onclick="enviarWhatsApp()">Solicitar orçamento no WhatsApp</button>
-
-</div>
-
-<script src="script.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-
-<script>
-
-
-
+    <script src="script.js"></script>
 </body>
 </html>
