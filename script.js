@@ -36,14 +36,13 @@ Responda com uma opção:
 
 ✔️ Atendimento rápido e direto`;
 
-    // --- AS LINHAS QUE ESTAVAM FALTANDO COLOQUE AQUI: ---
-    
-    // 1. Transforma o texto para o formato que o link da internet aceita
+   // 1. Transforma o texto para o formato que o link da internet aceita
     const mensagemCodificada = encodeURIComponent(mensagem);
 
     // 2. Junta o seu número com a mensagem no link padrão do WhatsApp
-    const urlFinal = `https://wa.me/${meuNumero}?text=${mensagemCodificada}`;
+    const urlFinal = `https://wa.me/5521991960469?text=${mensagemCodificada}`;
 
-    // 3. Abre o WhatsApp com os dados preenchidos
+    // 3. Abre o WhatsApp
     window.open(urlFinal, '_blank');
+}
 }
