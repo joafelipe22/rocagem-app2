@@ -1,17 +1,23 @@
-function enviar() {
+// Função simulada apenas para não quebrar o código caso você use cálculo automático
+function calcularValor(tipo) {
+    if (tipo === "Terreno leve") return 100;
+    if (tipo === "Médio") return 200;
+    if (tipo === "Pesado") return 300;
+    return 0;
+}
 
-    const nome = document.getElementById("nome").value;
-    const telefone = document.getElementById("telefone").value;
-    const endereco = document.getElementById("endereco").value;
-    const descricao = document.getElementById("descricao").value;
+function enviar() {
+    // 1. Captura os dados digitados na tela usando os IDs corretos
+    const nome = document.getElementById("nome").value || "Não informado";
+    const telefone = document.getElementById("telefone").value || "Não informado";
+    const endereco = document.getElementById("endereco").value || "Não informado";
+    const descricao = document.getElementById("descricao").value || "Não informado";
     const tipo = document.getElementById("tipo").value;
 
+    // 2. Calcula o valor estimado
     const valor = calcularValor(tipo);
 
-    // Substitua pelo seu número real (55 + DDD + Seu Número, sem espaços ou traços)
-    const meuNumero = "5521999999999"; 
-
-    // Texto da mensagem que você já tinha criado
+    // 3. Monta a estrutura da mensagem organizada
     const mensagem = `
 🚀 SOLICITAÇÃO DE ORÇAMENTO AUTOMÁTICO
 
@@ -36,13 +42,12 @@ Responda com uma opção:
 
 ✔️ Atendimento rápido e direto`;
 
-   // 1. Transforma o texto para o formato que o link da internet aceita
+    // 4. Transforma o texto para o formato aceito em links de internet
     const mensagemCodificada = encodeURIComponent(mensagem);
 
-    // 2. Junta o seu número com a mensagem no link padrão do WhatsApp
+    // 5. Gera a URL apontando diretamente para o seu WhatsApp com o código do Brasil (55)
     const urlFinal = `https://wa.me/5521991960469?text=${mensagemCodificada}`;
 
-    // 3. Abre o WhatsApp
+    // 6. Abre o WhatsApp em uma nova aba
     window.open(urlFinal, '_blank');
-}
 }
